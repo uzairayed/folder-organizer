@@ -1,0 +1,1 @@
+mod error; mod organizer; use organizer::FileOrganizer; fn main() { println!("Folder Organizer - Basic Test"); let organizer = FileOrganizer::new(std::path::PathBuf::from(".")); println!("Created organizer for: {}", organizer.target_dir.display()); }
