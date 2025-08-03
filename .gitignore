@@ -1,5 +1,5 @@
 # Rust build artifacts
-/target/
+target/
 **/*.rs.bk
 Cargo.lock
 
@@ -93,3 +93,10 @@ coverage/
 *.db
 *.sqlite
 *.sqlite3
+
+# Large build files
+*.rlib
+*.rmeta
+*.dll
+*.so
+*.dylib
