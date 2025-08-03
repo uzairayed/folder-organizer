@@ -11,11 +11,3 @@ walkdir = "2.3"
 thiserror = "1.0"
 anyhow = "1.0"
 chrono = { version = "0.4", features = ["serde"] }
-tauri = { version = "1.5", features = ["shell-open"] }
-tokio = { version = "1.0", features = ["full"] }
-
-[build-dependencies]
-tauri-build = { version = "1.5", features = [] }
-
-[features]
-custom-protocol = ["tauri/custom-protocol"]
