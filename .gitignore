@@ -27,10 +27,12 @@ folder-organizer-portable.exe
 *.bat
 !organize-interactive.bat
 !folder-organizer-portable.bat
+!CREATE_OFFLINE_PACKAGE.bat
 
-# Documentation (keep the setup guide)
+# Documentation (keep the setup guide and sharing instructions)
 *.md
 !LINUX_SETUP.md
+!SHARING_INSTRUCTIONS.md
 
 # IDE and editor files
 .vscode/
@@ -52,10 +54,9 @@ Thumbs.db
 *.bak
 *.backup
 
-# Archive files
+# Archive files (exclude large ZIP but allow offline package)
 *.zip
-*.tar.gz
-*.rar
+!Folder-Organizer-Offline-Package.zip
 
 # Database files
 *.db
