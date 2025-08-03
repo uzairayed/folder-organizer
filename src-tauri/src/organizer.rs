@@ -150,14 +150,6 @@ impl FileOrganizer {
             category: category.to_string(),
         });
 
-        println!(
-            "{} {} -> {}/{}",
-            if self.dry_run { "[DRY RUN]" } else { "[MOVE]" },
-            file_path.file_name().unwrap().to_str().unwrap(),
-            category,
-            target_filename
-        );
-
         Ok(())
     }
 
@@ -185,7 +177,6 @@ impl FileOrganizer {
         let log_path = self.target_dir.join(".folder_organizer_log.json");
         
         if !log_path.exists() {
-            println!("No organization log found. Nothing to undo.");
             return Ok(());
         }
 
@@ -195,8 +186,6 @@ impl FileOrganizer {
         let log: MoveLog = serde_json::from_str(&log_content)
             .map_err(|e| OrganizerError::SerializationError { source: e })?;
 
-        println!("Undoing {} file moves...", log.moves.len());
-
         for move_entry in log.moves.iter().rev() {
             if move_entry.to.exists() {
                 std::fs::rename(&move_entry.to, &move_entry.from)
@@ -205,7 +194,6 @@ impl FileOrganizer {
                         to: move_entry.from.clone(),
                         source: e,
                     })?;
-                println!("Undid: {} -> {}", move_entry.to.display(), move_entry.from.display());
             }
         }
 
@@ -220,7 +208,6 @@ impl FileOrganizer {
         // Remove the log file
         std::fs::remove_file(log_path).ok();
 
-        println!("Undo completed successfully!");
         Ok(())
     }
 } 
