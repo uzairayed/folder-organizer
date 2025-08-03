@@ -1,2 +1,95 @@
-/target
-node_modules
+# Rust build artifacts
+/target/
+**/*.rs.bk
+Cargo.lock
+
+# Tauri build artifacts
+src-tauri/target/
+src-tauri/Cargo.lock
+
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# Frontend build artifacts
+dist/
+build/
+.vite/
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Log files
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/
+
+# Executable files (keep portable versions)
+*.exe
+folder-organizer
+folder-organizer-portable.exe
+
+# But allow these specific executables
+!folder-organizer-portable.exe
+!folder-organizer.sh
+!build-linux.sh
+
+# Batch files (keep the interactive ones)
+*.bat
+!organize-interactive.bat
+!folder-organizer-portable.bat
+
+# Documentation (keep the setup guide)
+*.md
+!LINUX_SETUP.md
+
+# Test files
+test_files/
+*.test
+*.spec
+
+# Coverage reports
+coverage/
+*.lcov
+
+# Backup files
+*.bak
+*.backup
+
+# Archive files
+*.zip
+*.tar.gz
+*.rar
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
